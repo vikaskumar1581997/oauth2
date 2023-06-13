@@ -33,12 +33,6 @@ app.use(session({
   app.use(passport.initialize())
   app.use(passport.session())
 
-app.get('/redirect',(req,res)=>{
-    // console.log("jbdc")
-    res.redirect('/auth/google')
-})
-
-
   app.get('/auth/google',
   passport.authenticate('google', { scope: ['email','profile'] }));
 
@@ -60,7 +54,7 @@ app.get('/redirect',(req,res)=>{
         name
     }
     res.render("home",data)
-    // res.send(`hello ${name} congrats you have won 1 crore. Enjoy!!!!!!!!!`)
+    
   })
 
   app.get('/auth/failure',(req,res)=>{
