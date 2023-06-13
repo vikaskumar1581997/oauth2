@@ -20,7 +20,7 @@ function isLoggedIn(req,res,next){
 }
 
 app.get('/',(req,res)=>{
-    res.render('indexx')
+    res.sendFile(index.html)
 })
 
 app.use(session({
